@@ -1,0 +1,73 @@
+ReadMe:
+
+Answers to questions:
+
+Part2:
+
+    The One time pad is unbreakable because any message with the same length as the original can be generated using
+    some key or another. Each possibility is equally likely, so there is no information leak.
+
+Part3:
+
+    It is called the "One Time Pad" because if more than one file is encrypted with the same key, encrypting those two
+    files together will result in a file that can be decrypted using either of the original messages as the key.
+
+    Even if you do not know what the original message you can work your way up to it using inferences about the english
+    language (e.g. The word "the" will probably come up at some point)
+
+How to use this program:
+
+    OTPad.py accepts arguments from the command line and writes a file with the result
+
+    Example syntax (from Unix bash shell):
+
+        python OTPad.py KeyFile MessageFile CypherFile
+
+    KeyFile is the existing plaintext file you wish to use as a key
+    MessageFile is the existing plaintext file you wish to encrypt
+    CypherFile is the name of the file where you want the program to write the encrypted result.
+
+    Notes:
+     -If CypherFile already exists, it will be overwritten
+     -Tested using Unix bash shell, other command lines may require slightly altered syntax
+     -Assumes KeyFile and MessageFile are in the same directory as the OTPad.py program.
+
+This program comes with several files:
+
+Part 2 folder:
+
+    Coffee: This is the message "One coffee please"
+
+    Key1: This is the arbitrary Key I chose to encrypt Coffee
+
+    Cyphertext: This is the resulting encryption using Coffee and Key1
+        *Note, many characters do not display, but the ascii information is still stored in the file anyway
+
+    DawnKey: if you attempt to decrypt Cyphertext with this key, you will be lead to think that the message
+    is meant to be "We attack at dawn"
+
+Part 3 folder:
+
+    Plain1: This is the first plaintext file for part 3 containing the word "Hello"
+
+    Plain2: This is the second plaintext file for part 3 containing the word "There"
+
+    Key1: This is the Key I used to encrypt both Plain1 and Plain2
+
+    Cyph1: This is the resulting encryption for Plain1
+
+    Cyph2: This is the resulting encryption for Plain2
+
+    Cyph3: This is the Encryption from Encrypting Cyph1 and Cyph2 together
+
+    NewPlain1: This is the Decryption of Cyph3 using Plain2 as the key
+
+    NewPlain2: This is the Decryption of Cyph3 using Plain1 as the key
+
+SampleRun folder:
+	
+    Screen1 is a screenshot of the syntax I used to create a cypher text called ‘result’ 	using the Plain1 and Cyph3 files from the Part3 folder
+
+    Screen2 shows the file being created in the current directory as a result
+
+    Screen3 shows a concatenation of the Plain1, Cyph3 and Result files to show that it 	works the way it is supposed to (interestingly cat does not appear to be case 		sensitive for file names… which I was unaware of until looking at Screen3)
